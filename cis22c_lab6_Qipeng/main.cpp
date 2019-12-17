@@ -107,7 +107,7 @@ int main()
 	int key;
 	int choice;
 	int count = 0;
-	string name2[50];
+	string name[50];
 	std::string date[50];
 	short loop1 = 0;
 	short loop2=0;
@@ -161,7 +161,6 @@ int main()
 				
 				string name[50] = { line1 };
 				
-				
 				//cout << endl;
 				copy(name, name + sizeof(name) / sizeof(name[0]), ostream_iterator<string>(cout));
 				
@@ -173,10 +172,10 @@ int main()
 	else
 	{
 		cout << "Cannot find the file specified"<<endl;
-		for (int i = 0; i < sizeof(name2); i++)
+		for (int i = 0; i < sizeof(name); i++)
 		{
 			cout << "Values:" << endl;
-			cout << name2[i] << endl;
+			cout << name[i] << endl;
 
 		}
 		system("PAUSE");	
@@ -213,12 +212,10 @@ int main()
 		switch (choice)
 		{
 		case 1:
-			
-			for (int i = 0; i < sizeof(name2); i++)
+			for (int i = 0; i < sizeof(name); i++)
 			{
-				cout << name2[i] << endl;
-				//key = 0;
-				//hash.Insert(key, name[i]);
+				key = 0;
+				hash.Insert(key, name[i]);
 			}
 		case 2:
 			cout << "Enter birthday without delimiters of the element to be searched: ";
